@@ -31,36 +31,56 @@ function UserList() {
   });
 
   return (
-    <div>
-        <h1>User Directory Dashboard</h1>
+    <div className="container">
+      <h1>User Directory Dashboard</h1>
+
+      {/* Controls section */}
+      <div className="controls">
         <input
-            type="text"
-            placeholder="Search by name or email"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
+          type="text"
+          placeholder="Search by name or email"
+          value={search}
+          onChange={e => setSearch(e.target.value)}
         />
-        <button onClick={() => { setSortField("name"); setSortOrder("asc"); }}>Sort Name ↑</button>
-        <button onClick={() => { setSortField("name"); setSortOrder("desc"); }}>Sort Name ↓</button>
-        <button onClick={() => { setSortField("company"); setSortOrder("asc"); }}>Sort Company ↑</button>
-        <button onClick={() => { setSortField("company"); setSortOrder("desc"); }}>Sort Company ↓</button>
-        <button className="btnClear" onClick={() => setSearch("")}>Clear Search</button>
-        <table border="1" cellPadding="8" style={{ marginTop: "20px", width: "100%" }}>
-            <thead>
-            <tr>
-                <th>Name</th><th>Email</th><th>Phone</th><th>Company</th>
+        <button onClick={() => { setSortField("name"); setSortOrder("asc"); }}>
+          Sort Name ↑
+        </button>
+        <button onClick={() => { setSortField("name"); setSortOrder("desc"); }}>
+          Sort Name ↓
+        </button>
+        <button onClick={() => { setSortField("company"); setSortOrder("asc"); }}>
+          Sort Company ↑
+        </button>
+        <button onClick={() => { setSortField("company"); setSortOrder("desc"); }}>
+          Sort Company ↓
+        </button>
+        <button className="btnClear" onClick={() => setSearch("")}>
+          Clear Search
+        </button>
+      </div>
+
+      {/* Table */}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Phone</th><th>Company</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedUsers.map(user => (
+            <tr
+              key={user.id}
+              onClick={() => navigate(`/users/${user.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.phone}</td>
+              <td>{user.company.name}</td>
             </tr>
-            </thead>
-            <tbody>
-            {sortedUsers.map(user => (
-                <tr key={user.id} onClick={() => navigate(`/users/${user.id}`)} style={{ cursor: "pointer" }}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
-                <td>{user.company.name}</td>
-                </tr>
-            ))}
-            </tbody>
-        </table>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

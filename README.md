@@ -121,5 +121,3 @@ http://localhost:3000
 
 **Venkatesh Macharla**
 Frontend Developer with experience in React, JavaScript, and building responsive web applications.
-
----
