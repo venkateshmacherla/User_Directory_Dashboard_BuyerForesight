@@ -1,70 +1,125 @@
-# Getting Started with Create React App
+# User Directory Dashboard (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application I built as part of a Frontend Engineer assignment.
+The goal was to create a clean and functional user dashboard using real API data.
 
-## Available Scripts
+The app fetches user data from JSONPlaceholder and displays it in an easy-to-use interface with search, sorting, and detailed views.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## What this app does
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* Shows a list of users in a table format
+* Lets you search users by name or email
+* Allows sorting by name and company (both ascending and descending)
+* Clicking on any user takes you to a detailed profile page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Dashboard View
 
-### `npm run build`
+* Displays all users in a structured table
+* Includes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  * Name
+  * Email
+  * Phone
+  * Company
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Search
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Instant filtering on the frontend
+* Works for both name and email
 
-### `npm run eject`
+### Sorting
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Sort users by:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  * Name
+  * Company
+* Toggle between ascending and descending order
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### User Details Page
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Click on a user row to view full details
+* Displays:
 
-## Learn More
+  * Name, Username
+  * Email, Phone
+  * Website
+  * Company details
+  * Full address
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack
 
-### Code Splitting
+* React (Create React App)
+* React Router (for navigation between pages)
+* Fetch API (to get data from JSONPlaceholder)
+* CSS (for styling the UI)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+src/
+├── App.js
+├── UserList.js
+├── UserDetail.js
+├── App.css
+├── UserDetail.css
+└── index.js
+```
 
-### Making a Progressive Web App
+* `App.js` → Handles routing
+* `UserList.js` → Main dashboard with search and sorting
+* `UserDetail.js` → Shows detailed user information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## How to run this project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 1. Clone the repo
 
-### Deployment
+```bash
+git clone <your-repo-url>
+cd user-directory
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 2. Install dependencies
 
-### `npm run build` fails to minify
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 3. Start the app
+
+```bash
+npm start
+```
+
+### 4. Open in browser
+
+```
+http://localhost:3000
+```
+
+## What I focused on
+
+* Keeping the UI simple and clean
+* Making search and sorting fast and responsive
+* Writing readable and maintainable code
+* Ensuring smooth navigation between pages
+
+---
+
+## About Me
+
+**Venkatesh Macharla**
+Frontend Developer with experience in React, JavaScript, and building responsive web applications.
+
+---
